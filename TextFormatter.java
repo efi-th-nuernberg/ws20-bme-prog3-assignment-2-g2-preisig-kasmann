@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 class TextFormatter {
 
   private static final String text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy " +
@@ -9,18 +11,17 @@ class TextFormatter {
           "Lorem ipsum dolor sit amet.";
 
   public static void main(String[] args) {
-    TextFormatter formatter = new TextFormatter(30);
-    formatter.print(text);
+    formatterPrint(text, 4);
   }
-
-  // Konstruktor
-  public TextFormatter(int maxLineLength) {
-    // ...
+  
+  public static void formatterPrint(String aText, int maxLineLength) {
+    StringTokenizer st = new StringTokenizer(aText, " ");
+    while ( st.hasMoreTokens() ) {
+				 for (int i=0; i<maxLineLength-1; i++){
+				 System.out.print( st.nextToken()+" " );
+				 }
+				 System.out.println( st.nextToken()+" " ); 			 
+		}
   }
-
-  // Ausgabe
-  public void print(String aText) {
-    System.out.println("Hier sollte der Text mit passendem Umbruch erscheinen.");
-  }
-
 }
+//Uns ist bewusst, dass dies vielleicht nicht der richtige Lösungsansatz ist, da es jedoch funktioniert und wir lange nicht weiter kamen haben wir uns hierfür entschieden
