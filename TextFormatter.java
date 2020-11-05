@@ -9,18 +9,19 @@ class TextFormatter {
           "Lorem ipsum dolor sit amet.";
 
   public static void main(String[] args) {
-    TextFormatter formatter = new TextFormatter(30);
-    formatter.print(text);
+    System.out.println(formatterPrint(text, 30));
   }
+  
+  public static String formatterPrint(String aText, int maxLineLength) {
+    int length = aText.length();
+    String format ="";
 
-  // Konstruktor
-  public TextFormatter(int maxLineLength) {
-    // ...
+    for(int i = 0; i<length; i = i + maxLineLength){
+      if(i + maxLineLength >= length){
+        maxLineLength = maxLineLength - (i + maxLineLength - length);
+      }
+      format = format + aText.substring(i, i + maxLineLength) + "\n";
+    }
+    return format;
   }
-
-  // Ausgabe
-  public void print(String aText) {
-    System.out.println("Hier sollte der Text mit passendem Umbruch erscheinen.");
-  }
-
 }
