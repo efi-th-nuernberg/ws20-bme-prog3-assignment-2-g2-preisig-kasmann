@@ -14,11 +14,15 @@ class TextFormatter {
           "Lorem ipsum dolor sit amet.";
 
   public static void main(String[] args) {
+
     TextFormatter tf = new TextFormatter(30);
     ArrayList<String> lines=tf.getLines();
      tf.printLeft(lines);
      System.out.println();
      tf.printRight(lines);
+
+
+
   }
   public TextFormatter(int maxLineLength){
     this.maxLineLength = maxLineLength;
@@ -28,6 +32,7 @@ class TextFormatter {
       System.out.println(l);
     }
   }
+
   private void printRight(ArrayList<String> lines){
     for(String l:lines){
       while(l.length()< maxLineLength){
@@ -53,5 +58,6 @@ class TextFormatter {
     lines.add(currentLine);
     return(lines);
   }
+
 
 }
