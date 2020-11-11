@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 class TextFormatter {
 
   private static final String text = "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy " +
